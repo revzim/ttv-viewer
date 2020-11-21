@@ -4,6 +4,9 @@
 
 
 ![IMG](https://i.imgur.com/Z8E8fKP.png)
+![IMG](https://i.imgur.com/rYs5VdB.png)
+
+###### disclaimer: second image I cropped out stream name & gifters in the section of chat.
 
 ## install
 * git clone https://github.com/revzim/ttv-viewer
