@@ -2,6 +2,9 @@
 
 ## ttv-viewer is a very simple electron application to enjoy twitch ad-free. it uses ttv-ad-less-standalone as it's main dependency.
 
+
+![IMG](https://i.imgur.com/Z8E8fKP.png)
+
 ## install
 * git clone https://github.com/revzim/ttv-viewer
 * cd ttv-viewer
@@ -33,5 +36,3 @@
 * built on macos big sur
 
 #### author: revzim
-
-###### I have a working electron app for ad-less viewing. Feel free to message if interested.
