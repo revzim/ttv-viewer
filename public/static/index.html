@@ -1,0 +1,57 @@
+<!-- 
+ * simple electron bootstrap with vue
+ * author: revzim
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1, maximum-scale=1">
+    <!-- BOOTSTRAP -->
+    <link rel="stylesheet" href="css/material.min.css" />
+    <title>ttv-viewer</title>
+</head>
+
+<body class="bg-dark">
+    <!-- Navigation -->
+    <div class="container text-light" id="app">
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-bottom">
+            <div class="container">
+                <a class="navbar-brand" href="#">{{strings.name}}</a>
+                <button class="navbar-toggler" type="button" @click="bools.nav = !bools.nav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div v-show="bools.nav" class="navbar-collapse">
+                    <ul v-for="navlink in navlinks" class="navbar-nav ml-auto">
+                        <li class="nav-item" :id="'navlinkitem-'+navlink.key">
+                            <router-link class="nav-link" :to="navlink.route">
+                                {{navlink.title}}
+                            </router-link>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+
+        </nav>
+        <!-- route outlet -->
+        <!-- component matched by the route will render here -->
+        <transition name="fade" mode="out-in">
+            <!-- <keep-alive> -->
+            <router-view></router-view>
+            <!-- </keep-alive> -->
+        </transition>
+        <div class="indicator"></div>
+    </div>
+
+</body>
+<!-- VUE -->
+<script src="js/vue/vue.js"></script>
+<script src="js/vue/vue-router.js"></script>
+<script src="js/vue/http-vue-loader.js"></script>
+
+<script src="js/app/router.js"></script>
+<script src="js/app/vueapp.js"></script>
+
+</html>

@@ -1,0 +1,54 @@
+{
+  "name": "ttv-viewer",
+  "version": "0.0.1",
+  "description": "ttv-viewer is an electron application to enjoy twitch ad-free. it uses ttv-ad-less-standalone as it's main dependency.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder -mwl",
+    "distw": "electron-builder -w",
+    "distl": "electron-builder -l",
+    "distm": "electron-builder -m",
+    "postinstall": "electron-builder install-app-deps"
+  },
+  "build": {
+    "appId": "com.azim.ttv-viewer",
+    "icon": "./t.png",
+    "dmg": {
+      "contents": [
+        {
+          "x": 110,
+          "y": 150
+        },
+        {
+          "x": 240,
+          "y": 150,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ]
+    },
+    "win": {
+      "target": "nsis"
+    }
+  },
+  "repository": "https://github.com/revzim/ttv-viewer",
+  "keywords": [],
+  "author": "revzim",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "ttv-ad-less-standalone": "^0.0.11"
+  },
+  "devDependencies": {
+    "electron": "^11.0.1",
+    "electron-builder": "^22.4.1"
+  }
+}
