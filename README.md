@@ -42,7 +42,6 @@
 
 #### disclaimer
 * built on windows 10 (amd)
-* built on macos big sur
 * extensions not provided within this repo.
 
 #### author: revzim
