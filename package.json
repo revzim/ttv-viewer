@@ -1,7 +1,7 @@
 {
   "name": "ttv-viewer",
   "version": "0.0.13",
-  "description": "ttv-viewer is an electron application to enjoy twitch ad-free. it uses ttv-ad-less-standalone as it's main dependency.",
+  "description": "ttv-viewer - a simple electron app to enjoy twitch ad-free with bttv & ffz integration",
   "main": "main.js",
   "scripts": {
     "start": "electron . true",
