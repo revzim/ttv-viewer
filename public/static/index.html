@@ -7,13 +7,42 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1, maximum-scale=1">
+    <!-- <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1, maximum-scale=1"> -->
     <!-- BOOTSTRAP -->
+    <!-- <link rel="stylesheet" href="css/bootstrap.min.css" /> -->
     <link rel="stylesheet" href="css/material.min.css" />
+    <link rel="stylesheet" href="./css/tbar.css"/>
     <title>ttv-viewer</title>
+    
 </head>
 
 <body class="bg-dark">
+    <header id="titlebar">
+    <div id="drag-area">
+
+        <div id="window-title">
+        <span>TTV VIEWER</span>
+        </div>
+
+        <div id="window-controls">
+
+        <div class="button" id="min-button">
+            <img class="icon" srcset="./assets/min-w-10.png 1x, ./assets/min-w-12.png 1.25x, ./assets/min-w-15.png 1.5x, ./assets/min-w-15.png 1.75x, ./assets/min-w-20.png 2x, ./assets/min-w-20.png 2.25x, ./assets/min-w-24.png 2.5x, ./assets/min-w-30.png 3x, ./assets/min-w-30.png 3.5x" draggable="false" />
+        </div>
+        <div class="button" id="max-button">
+            <img class="icon" srcset="./assets/max-w-10.png 1x, ./assets/max-w-12.png 1.25x, ./assets/max-w-15.png 1.5x, ./assets/max-w-15.png 1.75x, ./assets/max-w-20.png 2x, ./assets/max-w-20.png 2.25x, ./assets/max-w-24.png 2.5x, ./assets/max-w-30.png 3x, ./assets/max-w-30.png 3.5x" draggable="false" />
+        </div>
+        <div class="button" id="restore-button">
+            <img class="icon" srcset="./assets/restore-w-10.png 1x, ./assets/restore-w-12.png 1.25x, ./assets/restore-w-15.png 1.5x, ./assets/restore-w-15.png 1.75x, ./assets/restore-w-20.png 2x, ./assets/restore-w-20.png 2.25x, ./assets/restore-w-24.png 2.5x, ./assets/restore-w-30.png 3x, ./assets/restore-w-30.png 3.5x" draggable="false" />
+        </div>
+        <div class="button" id="close-button">
+            <img class="icon" srcset="./assets/close-w-10.png 1x, ./assets/close-w-12.png 1.25x, ./assets/close-w-15.png 1.5x, ./assets/close-w-15.png 1.75x, ./assets/close-w-20.png 2x, ./assets/close-w-20.png 2.25x, ./assets/close-w-24.png 2.5x, ./assets/close-w-30.png 3x, ./assets/close-w-30.png 3.5x" draggable="false" />
+        </div>
+
+        </div>
+    </div>
+    </header>
+    <br />
     <!-- Navigation -->
     <div class="container text-light" id="app">
         <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-bottom">
@@ -35,6 +64,7 @@
             </div>
 
         </nav>
+        <br />
         <!-- route outlet -->
         <!-- component matched by the route will render here -->
         <transition name="fade" mode="out-in">
@@ -42,6 +72,7 @@
             <router-view></router-view>
             <!-- </keep-alive> -->
         </transition>
+        <br />
         <div class="indicator"></div>
     </div>
 
@@ -52,6 +83,7 @@
 <script src="js/vue/http-vue-loader.js"></script>
 
 <script src="js/app/router.js"></script>
+<script src="./js/app/tbar-controls.js"></script>
 <script src="js/app/vueapp.js"></script>
 
 </html>

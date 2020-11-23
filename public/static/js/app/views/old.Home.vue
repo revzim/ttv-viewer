@@ -3,19 +3,33 @@
   color:#fff;
   opacity: 1; /* Firefox */
   }
-  button {
-    color: #fff!important;
-  }
-</style>
 
+  .modal-dialog {
+    max-width: 100%!important;
+    width: 100%!important;
+    height: 100%!important;
+    background: #282828;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  #vid  {
+    width:200vh!important;
+    height:80vh!important;
+  }
+
+</style>
 <template>
   
-  <div class="container text-light rounded">
-    <div class="alert-info p-3 rounded">
-      <h1 class="text-light">{{strings.title}}</h1>
-      <h3 class="text-light">{{strings.subtitle}}</h3>
-    </div>
-    
+  <div class="container-large-desktop">
+    <h1 class="alert-info text-light">
+      {{strings.title}}
+      <br />
+      {{strings.subtitle}}
+    </h1>
+    <webview id="vid" class="modal-dialog m-1 bg-dark" v-show="bools.stream_loaded" useragent="Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; AS; rv:11.0) like Gecko" plugins></webview>
+    <br />
     <div class="container pb-5" >
       <div class="container" >
         <div class="row" v-show="bools.hover_out" >
@@ -25,11 +39,12 @@
       </div>
       <button class="btn form-control" @click="toggle_show_help">{{btns.show_help.label}}</button>
       <ul v-show="btns.show_help.show" class="list-group">
-        <li class="list-group-item alert-info m-2 p-2" v-for="thelper in t_helpers" :key="thelper.key">
-        <h5 class="text-light">{{thelper.title}}</h5>
-        <p class="mb-1 text-light">{{thelper.subtitle}}</p>
+        <li class="list-group-item list-group-item-primary m-2 p-2" v-for="thelper in t_helpers" :key="thelper.key">
+        <h5>{{thelper.title}}</h5>
+        <p class="mb-1">{{thelper.subtitle}}</p>
         </li>
       </ul>
+      <div class="indicator" ></div>
     </div>
     <br />
     <br />
@@ -38,7 +53,6 @@
 </template>
 
 <script>
-
 /* revzim | this base was an old electron 'skeleton' of mine */
 function Helper(key, title, subtitle) {
   this.key = key;
@@ -70,7 +84,7 @@ module.exports = {
       },
       strings: {
         title: "ttv-viewer",
-        subtitle: "watch twitch ad-free, with ffz & bttv",
+        subtitle: "ttv-viewer.",
         btns: {
           watch: "watch",
         },
@@ -85,40 +99,77 @@ module.exports = {
     };
   },
   methods: {
+    modal_view() {
+      /*
+        this.$modal.show(
+        {
+          template: `
+          <webview id="vid" class="modal-dialog m-1 bg-dark" :src="url" useragent="Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; AS; rv:11.0) like Gecko"></webview>`,
+            props: ['url'],
+          },
+          { url: url },
+          { height: '90%', resizable: true, width: "90%", adaptive: true, draggable: true, scrollable: true, focusTrap: true,},
+          { 'before-close': event => {} 
+        });
+        console.log(this.$modal);
+      */
+    },
     find_stream() {
       if (this.inputs.streamer.length < 3) return;
-      document.querySelector('body').classList.remove('maximize');
+      // const url = `http://localhost:8085/ttv/${this.inputs.streamer}`;
+      // window.location.href = url;
+      // document.querySelector("#vid").src = url;
       api.send("toMain", btoa(JSON.stringify({
         key: "query.ttv.stream",
         data:{
           streamer: this.inputs.streamer,
         }
       })));
+      // const webview = document.querySelector('webview');
+      // const indicator = document.querySelector('.indicator');
+      // webview.src = url;
+      // const loadstart = () => {
+      //   this.bools.stream_loaded = false;
+      //   indicator.innerText = `attempting to load ${this.inputs.streamer}'s stream.`;
+      // }
+      // const loadstop = () => {
+      //   indicator.innerText = '';
+      //   this.bools.stream_loaded = true;
+      //   // this.show();
+      // }
+      // console.log("WEBVIEW:", webview);
+      // webview.addEventListener('did-start-loading', loadstart);
+      // webview.addEventListener('did-stop-loading', loadstop);
+    },
+    hover_toggle(toggle) {
+      this.bools.hover_out = toggle;
+      if (toggle) {
+        
+      } else {
+
+      }
     },
     toggle_show_help() {
       this.btns.show_help.show = !this.btns.show_help.show;
       this.btns.show_help.show ? this.btns.show_help.label = "THANKS FOR THE HELP" : this.btns.show_help.label = "I NEED HELP!";
     },
-
+    // show () {
+    //   this.$modal.show('my-first-modal');
+    // },
+    // hide () {
+    //   this.$modal.hide('my-first-modal');
+    // }
   },
   mounted() {
-    init_controls();
-    
-    window.api.receive("fromMain", data=>{
-      const jdata = JSON.parse(atob(data));
-      switch(jdata.key) {
-        case "btn.max":
-          document.body.classList.add('maximized');
-          break;
-        case "btn.restore":
-          document.body.classList.remove('maximized');
-          break;
-        default:
-          break;
-      }
-    })
+
+    // const webview = document.querySelector('webview');
+    // window.onresize=function(){
+    //   webview.width=window.innerWidth;
+    //   webview.height=window.innerHeight;
+    // };
   },
 };
 </script>
 
-
+<style>
+</style>

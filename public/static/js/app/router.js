@@ -2,7 +2,7 @@
 Vue.use(VueRouter)
 
 const routes = [
-  { path: '/', component: httpVueLoader("./js/app/views/Home.vue") }
+  { path: '/', component: httpVueLoader("./js/app/views/Home.vue") },
 ]
 
 const router = new VueRouter({
