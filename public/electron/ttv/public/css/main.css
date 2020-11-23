@@ -1,0 +1,25 @@
+* {
+  background: #282828!important;
+  margin: 0; 
+  scrollbar-width: none; 
+  -ms-overflow-style: none;
+  overflow-y: scroll;
+}
+*::-webkit-scrollbar {
+  width: 0px;
+  background: transparent; 
+}
+@-moz-document url-prefix() { 
+  html{
+    scrollbar-width: none;
+  }
+}
+
+.t-p {
+  display: none;
+}
+
+#alert {
+  color: #fff!important;
+  display:none;
+}

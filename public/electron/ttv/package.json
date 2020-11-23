@@ -1,0 +1,15 @@
+{
+  "name": "ttv-ad-less-standalone",
+  "version": "0.0.12",
+  "description": "very simple node webserver to circumvent intrusive annoyances",
+  "main": "app.js",
+  "repository": "https://github.com/revzim/ttv-ad-less-standalone",
+  "author": "revzim",
+  "license": "MIT",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
