@@ -1,12 +1,13 @@
 ## ttv-viewer
 
-## ttv-viewer is a very simple electron application to enjoy twitch ad-free. it uses ttv-ad-less-standalone as it's main dependency.
+### ttv-viewer - a simple electron app to enjoy twitch ad-free with bttv & ffz integration
 
+![HOME](https://i.imgur.com/ogNkhvz.png)
+![VIEWER_0](https://i.imgur.com/1xjWM3r.png)
+![VIEWER_1](https://i.imgur.com/5Ktix99.png)
+![VIEWER_2](https://i.imgur.com/PsnAqzz.png)
 
-![IMG](https://i.imgur.com/Z8E8fKP.png)
-![IMG](https://i.imgur.com/rYs5VdB.png)
-
-###### disclaimer: second image I cropped out stream name & gifters in the section of chat.
+[ALBUM](https://imgur.com/a/rBLHGEa)
 
 ## install
 * git clone https://github.com/revzim/ttv-viewer
@@ -17,7 +18,7 @@
   * npm run start
     * or yarn start
   * application will start
-    *  ex: enter the streamer name into the search box then hit enter or tap 'watch'.
+    *  ex: enter the streamer name into the search box then hit enter or tap 'watch'
   * and
   * a local server will spin up at localhost:8085
     * route `/ttv/<streamer>` where \<streamer\> = streamer to watch
@@ -33,6 +34,11 @@
 * linux
   * yarn distl or npm run distl
 
+
+## included extensions 
+* [ublock origin](https://github.com/gorhill/uBlock) *
+* [bttv](https://github.com/night/betterttv)
+* [ffz](https://github.com/FrankerFaceZ/FrankerFaceZ)
 
 #### disclaimer
 * built on windows 10 (amd)
