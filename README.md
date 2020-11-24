@@ -2,7 +2,9 @@
 
 ### ttv-viewer - a simple electron app to enjoy twitch ad-free with bttv & ffz integration
 
-[latest release exe installer](https://github.com/revzim/ttv-viewer/releases/download/0.0.13/ttv-viewer.Setup.0.0.13.exe)
+### [windows installer](https://github.com/revzim/ttv-viewer/releases/download/0.0.13/ttv-viewer.Setup.0.0.13.exe)
+
+### [macOS installer](https://github.com/revzim/ttv-viewer/releases/download/0.0.13/ttv-viewer-0.0.13.dmg)
 
 ![HOME](https://i.imgur.com/ogNkhvz.png)
 ![VIEWER_0](https://i.imgur.com/1xjWM3r.png)
@@ -25,17 +27,6 @@
   * a local server will spin up at localhost:8085
     * route `/ttv/<streamer>` where \<streamer\> = streamer to watch
   * [watch](http://localhost:8085/ttv/<streamer>)
-
-## BUILD
-* all:
-  yarn dist or npm run dist
-* windows:
-  * yarn distw or npm run distw
-* mac
-  * yarn distm or npm run distm
-* linux
-  * yarn distl or npm run distl
-
 
 ## included extensions 
 * [ublock origin](https://github.com/gorhill/uBlock) *
