@@ -2,18 +2,14 @@
 
 ### ttv-viewer - a simple electron app to enjoy twitch ad-free with bttv & ffz integration
 
-### [windows installer](https://github.com/revzim/ttv-viewer/releases/download/0.0.13/ttv-viewer.Setup.0.0.13.exe)
+### [installers](https://github.com/revzim/ttv-viewer/releases)
 
-### [macOS installer](https://github.com/revzim/ttv-viewer/releases/download/0.0.13/ttv-viewer-0.0.13.dmg)
-
-![HOME](https://i.imgur.com/ogNkhvz.png)
+![HOME](https://i.imgur.com/qC5TFWA.png)
 ![VIEWER_0](https://i.imgur.com/1xjWM3r.png)
 ![VIEWER_1](https://i.imgur.com/5Ktix99.png)
 ![VIEWER_2](https://i.imgur.com/PsnAqzz.png)
 
-[ALBUM](https://imgur.com/a/rBLHGEa)
-
-## install
+## view & install from source (0.0.13=current source)
 * git clone https://github.com/revzim/ttv-viewer
 * cd ttv-viewer
 * npm install 
